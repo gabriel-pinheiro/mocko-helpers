@@ -42,23 +42,23 @@ describe('date', function() {
     });
 
     it('works with a custom time and custom format', () => {
-      const fn = hbs.compile('{{date "2018-12-31" "MMMM DD, YYYY"}}');
-      assert.deepEqual(fn(context), 'December 31, 2018');
+      const fn = hbs.compile('{{date "2018-12-30" "MMMM DD, YYYY"}}');
+      assert.deepEqual(fn(context), 'December 30, 2018');
     });
 
     it('works with a time variable and custom format', () => {
       const fn = hbs.compile('{{date time "MMMM DD, YYYY"}}');
-      assert.deepEqual(fn(context), 'December 31, 2018');
+      assert.deepEqual(fn(context), 'December 30, 2018');
     });
 
     it('works with a format from the context:', () => {
       const fn = hbs.compile('{{date time formatDate}}');
-      assert.deepEqual(fn(context), '12-31-2018');
+      assert.deepEqual(fn(context), '12-30-2018');
     });
 
     it('works with an ISO time string and custom format', () => {
-      const fn = hbs.compile('{{date "2018-12-31T14:23:02.544+0000" "MMMM DD, YYYY"}}');
-      assert.deepEqual(fn(context), 'December 31, 2018');
+      const fn = hbs.compile('{{date "2018-12-30T14:23:02.544+0000" "MMMM DD, YYYY"}}');
+      assert.deepEqual(fn(context), 'December 30, 2018');
     });
   });
 

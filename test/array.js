@@ -563,4 +563,41 @@ describe('array', function() {
     });
   });
 
+  describe('forEach', function() {
+    it('should iterate over an array, exposing objects as context', function() {
+      var arr = [{name: 'a'}, {name: 'b'}, {name: 'c'}];
+
+      var fn = hbs.compile('{{#forEach arr}}{{name}}{{/forEach}}');
+      assert.equal(fn({arr: arr}), 'abc');
+    });
+
+    it('should expose `index`', function() {
+      var arr = [{name: 'a'}, {name: 'b'}, {name: 'c'}];
+
+      var fn = hbs.compile('{{#forEach arr}}{{index}}{{/forEach}}');
+      assert.equal(fn({arr: arr}), '123');
+    });
+
+    it('should expose `total`', function() {
+      var arr = [{name: 'a'}, {name: 'b'}, {name: 'c'}];
+
+      var fn = hbs.compile('{{#forEach arr}}{{total}}{{/forEach}}');
+      assert.equal(fn({arr: arr}), '333');
+    });
+
+    it('should expose `isFirst`', function() {
+      var arr = [{name: 'a'}, {name: 'b'}, {name: 'c'}];
+
+      var fn = hbs.compile('{{#forEach arr}}{{isFirst}}{{/forEach}}');
+      assert.equal(fn({arr: arr}), 'truefalsefalse');
+    });
+
+    it('should expose `isLast`', function() {
+      var arr = [{name: 'a'}, {name: 'b'}, {name: 'c'}];
+
+      var fn = hbs.compile('{{#forEach arr}}{{isLast}}{{/forEach}}');
+      assert.equal(fn({arr: arr}), 'falsefalsetrue');
+    });
+  });
+
 });
