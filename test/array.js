@@ -598,6 +598,13 @@ describe('array', function() {
       var fn = hbs.compile('{{#forEach arr}}{{isLast}}{{/forEach}}');
       assert.equal(fn({arr: arr}), 'falsefalsetrue');
     });
+
+    it('should not change original objects', function() {
+      var arr = [{name: 'a'}];
+
+      var fn = hbs.compile('{{#forEach arr}}{{name}}{{/forEach}}{{arr.[0].isFirst}}');
+      assert.equal(fn({arr: arr}), 'a');
+    });
   });
 
 });

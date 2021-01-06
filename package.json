@@ -1,7 +1,7 @@
 {
   "name": "@mocko/helpers",
   "description": "More than 130 Handlebars helpers in ~20 categories.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/gabriel-pinheiro/mocko-helpers",
   "author": "OneFlow Systems Ltd",
   "contributors": [
@@ -74,6 +74,7 @@
     "release": "semantic-release"
   },
   "dependencies": {
+    "@hapi/hoek": "^9.1.1",
     "moment": "^2.29.1"
   },
   "peerDependencies": {
