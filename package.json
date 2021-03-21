@@ -1,7 +1,7 @@
 {
   "name": "@mocko/helpers",
   "description": "More than 130 Handlebars helpers in ~20 categories.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/gabriel-pinheiro/mocko-helpers",
   "author": "OneFlow Systems Ltd",
   "contributors": [
@@ -68,26 +68,28 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "cross-env MOCKO_HELPERS_TEST=true jest --runInBand",
     "cover": "jest --coverage",
     "docs": "jsdoc -c jsdoc.js",
     "release": "semantic-release"
   },
   "dependencies": {
     "@hapi/hoek": "^9.1.1",
+    "@mocko/resync": "^1.0.0",
     "moment": "^2.29.1"
   },
   "peerDependencies": {
     "handlebars": "4.x"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "docdash": "^1.2.0",
     "eslint": "^7.17.0",
     "handlebars": "^4.7.6",
     "jest": "^26.6.3",
     "jsdoc": "^3.6.6",
     "mockdate": "^3.0.2",
-    "semantic-release": "^17.3.1"
+    "semantic-release": "^17.4.2"
   },
   "keywords": [
     "array",
