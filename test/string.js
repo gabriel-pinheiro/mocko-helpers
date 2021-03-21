@@ -36,6 +36,11 @@ describe('string', function() {
       const fn = hbs.compile('{{append value}}');
       assert.equal(fn({value: 'file'}), 'file');
     });
+
+    it('should append multiple values', function() {
+      const fn = hbs.compile('{{append "a" true 5 "b"}}');
+      assert.equal(fn({}), 'atrue5b');
+    });
   });
 
   describe('camelcase', function() {
