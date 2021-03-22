@@ -15,8 +15,8 @@ function withState(lib) {
   const obj = {};
 
   Object.entries(lib).forEach(([key, value]) => {
-    obj[key] = (...params) => {
-      return state(() => value(...params));
+    obj[key] = function(...params) {
+      return state(() => value.apply(this, params));
     };
   });
 
